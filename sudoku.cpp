@@ -12,13 +12,20 @@ int main(void){
 		getPuzzle(sudoku); // get sudoku from user input
 		std::cout << "\n\n Incomplete sudoku puzzle:\n";
 		printPuzzle(sudoku);
-		bool solved = sudoku.solvePuzzle(); // brute force search algorithm
-		if(solved){
-			std::cout << "\n\n Solution:\n";
-			printPuzzle(sudoku);
-		} else std::cout << "\n\n The given puzzle has no solution.\n";
+		bool valid = sudoku.checkValid(); // check if the input is valid
+		
+
+		if(valid){
+			bool solved = sudoku.solvePuzzle(); // brute force search algorithm
+			if(solved){
+				std::cout << "\n\n Solution:\n";
+				printPuzzle(sudoku);
+			} else std::cout << "\n The given puzzle has no solution.\n\n";
+		} else {
+			std::cout << "\n The given puzzle is invalid.\n\n";
+		}
 	}
-	while(again()); // again prompts the user
+	while(again()); // again prompts the user to continue
 	
 	return 0;
 }

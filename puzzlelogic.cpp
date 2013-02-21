@@ -18,6 +18,24 @@ Puzzle::Puzzle(){
 
 
 
+// checks if the given puzzle has any conflicting tiles
+bool Puzzle::checkValid(){
+	for(int i = 0; i < 9; i++){
+		for(int j = 0; j < 9; j++){
+
+			// if there's a tile conflict
+			if(getTile(i, j) != 0 &&
+				(!checkRow(i, j, getTile(i, j)) ||
+				!checkColumn(i, j, getTile(i, j)) ||
+				!checkSquare(i, j, getTile(i, j)))){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+
 // Basic getter.
 int Puzzle::getTile(int i, int j){
 	return grid[i][j];

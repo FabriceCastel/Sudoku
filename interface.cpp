@@ -12,7 +12,7 @@ void printTitle(void){
 	cout << "\n\n *****************************************************************\n"
 		 << " *                  BRUTE FORCE SUDOKU SOLVER                    *\n"
 		 << " *                      by Fabrice Castel                        *\n"
-		 << " *                         V 1.0 - 2013                          *\n"
+		 << " *                         V 1.1 - 2013                          *\n"
 		 << " *****************************************************************\n\n"
 		 << " NOTE: This is an early build which will not terminate given an unsolvable grid.\n\n";
 }

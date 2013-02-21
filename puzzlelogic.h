@@ -20,6 +20,7 @@ public:
 	bool checkSquare(int i, int j, int val);
 	bool solvePuzzle(void);
 	void resetTile(int i, int j);
+	bool checkValid();
 };
 
 #endif
